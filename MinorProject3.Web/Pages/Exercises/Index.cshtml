@@ -1,0 +1,56 @@
+
+@page
+@using MinorProject3.Data
+@inject ExerciseRepository ExerciseRepo
+
+@{
+    ViewData["Title"] = "Exercises";
+    var exercises = ExerciseRepo.GetAllExercises();
+}
+
+<h1>Gym Exercises</h1>
+
+<p>Manage the exercises available in our gym.</p>
+
+<a asp-page="./Create" class="btn btn-success mb-3">
+    + Add Exercise
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Exercise Name</th>
+            <th>Muscle Group</th>
+            <th>Equipment</th>
+            <th>Difficulty</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var exercise in exercises)
+        {
+            <tr>
+                <td>@exercise.ExerciseId</td>
+                <td>@exercise.ExerciseName</td>
+                <td>@exercise.MuscleGroup</td>
+                <td>@exercise.Equipment</td>
+                <td>@exercise.Difficulty</td>
+                <td>
+                    <a asp-page="./Edit"
+                       asp-route-id="@exercise.ExerciseId"
+                       class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-page="./Delete"
+                       asp-route-id="@exercise.ExerciseId"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

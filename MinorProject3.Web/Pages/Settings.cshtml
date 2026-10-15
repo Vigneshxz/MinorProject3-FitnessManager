@@ -1,0 +1,58 @@
+
+@page
+
+@{
+    ViewData["Title"] = "Settings";
+}
+
+<h1>Settings</h1>
+
+<p>Customize the appearance of your Fitness Manager website.</p>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h4 class="card-title">Appearance</h4>
+
+        <p>Choose your preferred website theme.</p>
+
+        <div class="mb-3">
+            <label for="themeSelect" class="form-label">
+                Website Theme
+            </label>
+
+            <select id="themeSelect" class="form-select">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+        </div>
+
+        <p id="themeMessage" class="text-success"></p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const themeSelect = document.getElementById("themeSelect");
+        const themeMessage = document.getElementById("themeMessage");
+
+        const savedTheme = localStorage.getItem("fitnessTheme") || "light";
+
+        themeSelect.value = savedTheme;
+
+        themeSelect.addEventListener("change", function () {
+
+            const selectedTheme = themeSelect.value;
+
+            document.documentElement.setAttribute(
+                "data-bs-theme",
+                selectedTheme
+            );
+
+            localStorage.setItem("fitnessTheme", selectedTheme);
+
+            themeMessage.textContent =
+                "Theme changed to " + selectedTheme + " mode!";
+        });
+    });
+</script>

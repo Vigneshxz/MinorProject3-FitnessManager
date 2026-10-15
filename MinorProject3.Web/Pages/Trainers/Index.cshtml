@@ -1,0 +1,56 @@
+
+@page
+@using MinorProject3.Data
+@inject TrainerRepository TrainerRepo
+
+@{
+    ViewData["Title"] = "Trainers";
+    var trainers = TrainerRepo.GetAllTrainers();
+}
+
+<h1>Gym Trainers</h1>
+
+<p>Manage all trainers registered in the gym.</p>
+
+<a asp-page="./Create" class="btn btn-success mb-3">
+    + Add Trainer
+</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Specialty</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var trainer in trainers)
+        {
+            <tr>
+                <td>@trainer.TrainerId</td>
+                <td>@trainer.FirstName</td>
+                <td>@trainer.LastName</td>
+                <td>@trainer.Email</td>
+                <td>@trainer.Specialty</td>
+                <td>
+                    <a asp-page="./Edit"
+                       asp-route-id="@trainer.TrainerId"
+                       class="btn btn-warning btn-sm">
+                        Edit
+                    </a>
+
+                    <a asp-page="./Delete"
+                       asp-route-id="@trainer.TrainerId"
+                       class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

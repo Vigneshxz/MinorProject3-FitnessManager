@@ -1,0 +1,38 @@
+
+@page "{id:int}"
+@model MinorProject3.Web.Pages.Exercises.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete Exercise";
+}
+
+<h1>Delete Exercise</h1>
+
+<div class="alert alert-warning">
+    Are you sure you want to delete this exercise?
+</div>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+<p>
+    <strong>Exercise:</strong> @Model.Exercise.ExerciseName
+</p>
+
+<p>
+    <strong>Muscle Group:</strong> @Model.Exercise.MuscleGroup
+</p>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">
+        Yes, Delete Exercise
+    </button>
+
+    <a asp-page="./Index" class="btn btn-secondary">
+        Cancel
+    </a>
+</form>

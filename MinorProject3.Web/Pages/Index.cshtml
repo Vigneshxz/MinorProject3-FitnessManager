@@ -1,0 +1,156 @@
+﻿
+@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center py-5">
+
+    <h1 class="display-4 fw-bold">
+        Welcome to Fitness Manager
+    </h1>
+
+    <p class="lead mt-3">
+        Your all-in-one gym management system.
+    </p>
+
+    <p class="text-muted">
+        Manage gym clients, trainers, exercises,
+        and daily administration in one place.
+    </p>
+
+    <a asp-page="/Admin"
+       class="btn btn-primary btn-lg mt-3">
+        Open Admin Dashboard
+    </a>
+
+</div>
+
+<hr class="my-4" />
+
+<h2 class="text-center mb-4">Explore Fitness Manager</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Clients</h3>
+
+                <p class="card-text mt-3">
+                    View, add, edit, and delete gym
+                    clients. Search clients by
+                    first name and last name.
+                </p>
+
+                <a asp-page="/Clients/Index"
+                   class="btn btn-primary mt-2">
+                    Manage Clients
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Trainers</h3>
+
+                <p class="card-text mt-3">
+                    Manage gym trainers,
+                    their contact information,
+                    and training specialties.
+                </p>
+
+                <a asp-page="/Trainers/Index"
+                   class="btn btn-primary mt-2">
+                    Manage Trainers
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+
+                <h3 class="card-title">Exercises</h3>
+
+                <p class="card-text mt-3">
+                    Browse and manage exercises
+                    by muscle group, equipment,
+                    and difficulty level.
+                </p>
+
+                <a asp-page="/Exercises/Index"
+                   class="btn btn-primary mt-2">
+                    Manage Exercises
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row g-4 mt-2">
+
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+
+                <h4>Administration</h4>
+
+                <p>
+                    View gym statistics and access
+                    administrative management tools.
+                </p>
+
+                <a asp-page="/Admin"
+                   class="btn btn-outline-primary">
+                    Go to Admin
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+
+                <h4>Settings</h4>
+
+                <p>
+                    Customize your website appearance
+                    by switching between light
+                    and dark mode.
+                </p>
+
+                <a asp-page="/Settings"
+                   class="btn btn-outline-primary">
+                    Open Settings
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="text-center mt-5 mb-4">
+
+    <h5>Fitness Manager</h5>
+
+    <p class="text-muted">
+        Built using ASP.NET Core Razor Pages,
+        C#, MySQL, and Bootstrap.
+    </p>
+
+</div>

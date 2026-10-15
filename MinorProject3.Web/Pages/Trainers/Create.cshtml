@@ -1,0 +1,36 @@
+
+@page
+@model MinorProject3.Web.Pages.Trainers.CreateModel
+
+@{
+    ViewData["Title"] = "Add Trainer";
+}
+
+<h1>Add New Trainer</h1>
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Trainer.FirstName" class="form-label">First Name</label>
+        <input asp-for="Trainer.FirstName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Trainer.LastName" class="form-label">Last Name</label>
+        <input asp-for="Trainer.LastName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Trainer.Email" class="form-label">Email</label>
+        <input asp-for="Trainer.Email" type="email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Trainer.Specialty" class="form-label">Specialty</label>
+        <input asp-for="Trainer.Specialty" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Trainer</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MinorProject3.Data/MinorProject3.Data.csproj" />
+  <Project Path="MinorProject3.Web/MinorProject3.Web.csproj" />
+</Solution>

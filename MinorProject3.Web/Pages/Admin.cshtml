@@ -1,0 +1,103 @@
+
+@page
+@model MinorProject3.Web.Pages.AdminModel
+
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Admin Dashboard</h1>
+
+<p class="text-muted">
+    Welcome to the Fitness Manager administration page.
+</p>
+
+<h3 class="mt-4">Database Overview</h3>
+
+<div class="row mt-3">
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total Clients</h5>
+                <h2>@Model.TotalClients</h2>
+                <a asp-page="/Clients/Index"
+                   class="btn btn-primary">
+                    Manage Clients
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total Trainers</h5>
+                <h2>@Model.TotalTrainers</h2>
+                <a asp-page="/Trainers/Index"
+                   class="btn btn-primary">
+                    Manage Trainers
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total Exercises</h5>
+                <h2>@Model.TotalExercises</h2>
+                <a asp-page="/Exercises/Index"
+                   class="btn btn-primary">
+                    Manage Exercises
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<hr />
+
+<h3 class="mt-4">Administration Tools</h3>
+
+<div class="card mt-3">
+    <div class="card-body">
+        <h5>Manage Gym Records</h5>
+
+        <p>
+            Use the buttons below to add, update,
+            or delete gym records.
+        </p>
+
+        <a asp-page="/Clients/Create"
+           class="btn btn-success me-2 mb-2">
+            Add Client
+        </a>
+
+        <a asp-page="/Trainers/Create"
+           class="btn btn-success me-2 mb-2">
+            Add Trainer
+        </a>
+
+        <a asp-page="/Exercises/Create"
+           class="btn btn-success mb-2">
+            Add Exercise
+        </a>
+    </div>
+</div>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h5>Website Settings</h5>
+
+        <p>
+            Customize the appearance of Fitness Manager.
+        </p>
+
+        <a asp-page="/Settings"
+           class="btn btn-secondary">
+            Open Settings
+        </a>
+    </div>
+</div>

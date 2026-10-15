@@ -1,0 +1,44 @@
+
+@page "{id:int}"
+@model MinorProject3.Web.Pages.Clients.EditModel
+
+@{
+    ViewData["Title"] = "Edit Client";
+}
+
+<h1>Edit Client</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"
+         class="text-danger"></div>
+
+    <input type="hidden" asp-for="Client.ClientId" />
+
+    <div class="mb-3">
+        <label asp-for="Client.FirstName" class="form-label">First Name</label>
+        <input asp-for="Client.FirstName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Client.LastName" class="form-label">Last Name</label>
+        <input asp-for="Client.LastName" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Client.Email" class="form-label">Email</label>
+        <input asp-for="Client.Email" type="email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Client.Phone" class="form-label">Phone</label>
+        <input asp-for="Client.Phone" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Save Changes
+    </button>
+
+    <a asp-page="./Index" class="btn btn-secondary">
+        Cancel
+    </a>
+</form>
